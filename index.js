@@ -38,7 +38,19 @@ class PokemonPsi extends Pokemon {
         console.log(`${this.nombre} uso el poder ${this.poder}`)
     }
 }
+// Ejercicio Facil: Hacer una clase PokemonVolador. PokemonFuegoVolador (charizard)
+class PokemonVolador extends PokemonFuego {
+    // sobrecarga constructor
+    constructor(nombre = "Charizard", poder = "RevoloteoFogoso") {
+        // ESPECIAL -> llama al super
+        super(nombre)
+        this.poder = poder
+    }
 
+    atacar () {
+        console.log(`${this.nombre} uso el poder ${this.poder}`)
+    }
+}
 class Pokedex {
     constructor(color = "SIN_COLOR") {
         this.color = color
@@ -60,6 +72,12 @@ class Pokedex {
         this.pokediccionario.forEach(pokemon => pokemon.describir())
     }
 }
+
+let myDragonzote = new PokemonVolador("Charizard")
+myDragonzote.describir()
+myDragonzote.atacar()
+console.log("")
+console.log("")
 
 let myDragoncito = new PokemonFuego("Charizard")
 myDragoncito.describir()
@@ -85,9 +103,15 @@ const miLibroRosita = new Pokedex("rosa")
 miLibroAzul.pokediccionario[2].nombre = "Pikachu"
 miLibroRosita.pokediccionario[2].nombre = "Squirtle"
 
+//Ejercicio sencillo: hacer una pokedex con Pokemons de vrios tipos
+const miLibroVerde = new Pokedex ("verde")
+miLibroVerde.pokediccionario [2].nombre ="Miaumon"
+miLibroVerde.pokediccionario [2].nombre ="Marramiaumon"
+
 console.log("********************************************")
 miLibroAzul.listar()
 miLibroRosita.listar()
+miLibroVerde.listar()
 
 // Ejercicio Sencillo: hacer una pokedex con pokemons de varios tipos
 // Ejercicio Facil: Hacer una clase PokemonVolador. PokemonFuegoVolador (charizard)
